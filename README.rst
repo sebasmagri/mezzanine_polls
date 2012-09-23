@@ -18,7 +18,7 @@ Install the app by using _`pip`::
 
   $ pip install mezzanine_polls
 
-Add `mezzanine_polls` to `INSTALLED_APPS` and synchronize/migrate the database.
+Add ``mezzanine_polls`` to ``INSTALLED_APPS`` and synchronize/migrate the database.
 
 Go to the admin site and create new polls in the ``Pages`` section
 
@@ -30,5 +30,5 @@ New features and fixes are welcome. Better if it comes with a patch or pull requ
 .. _`Mezzanine`: http://mezzanine.jupo.org/
 .. _`Django`: http://djangoproject.com/
 .. _`pip`: http://www.pip-installer.org/
-.. _`Bitbucket`: 
-.. _`GitHub`: 
+.. _`Bitbucket`: https://bitbucket.org/sebasmagri/mezzanine_polls
+.. _`GitHub`: https://github.com/sebasmagri/mezzanine_polls
