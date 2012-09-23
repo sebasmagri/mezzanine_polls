@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% load mezzanine_tags i18n %}
+
+{% block meta_title %}{{ page.title }}{% endblock %}
+
+{% block breadcrumb_menu %}
+<ul>
+    <li><a href="{% url home %}">{% trans "Home" %}</a> &gt;&nbsp;</li>
+    <li>{% trans "Poll" %}: {{ page.title }}</li>
+</ul><br />
+{% endblock %}
+
+{% block title %}
+{% trans "Poll"%}: {% editable page.title %}{{ page.title }}{% endeditable %}
+{% endblock %}
+
+{% block main %}
+<div id="poll_info">
+  {% if page.publish_date %}
+  <p><small>{% trans "Created on" %} {{ page.publish_date }}</small></p>
+  {% if page.expiry_date %}<p><small>{% trans "Expires on" %} {{ page.expiry_date }}</small></p>{% endif %}
+  {% endif %}
+</div>
+{% if form %}
+<form action="{{ page.get_absolute_url }}" method="post">{% csrf_token %}
+  <fieldset>
+    {{ form.errors }}
+    <table>
+      {% for choice in page.poll.choice_set.all %}
+      <tr>
+        <td>
+          <input type="radio" name="choices" id="choices{{ forloop.counter }}" value="{{ choice.id }}"/>
+        </td>
+        <td>
+          <label for="choices{{ forloop.counter }}">{{ choice.text }}</label>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+    <input type="submit" id="submit" value="Submit" />
+  </fieldset>
+</form>
+{% else %}
+<ul>
+  {% for choice_text, votes in poll_results %}
+  <li>{{ choice_text }}: {{ votes }} {% trans "vot" %}{{ votes|pluralize:"e,es" }}
+</li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

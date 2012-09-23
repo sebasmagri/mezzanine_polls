@@ -1,0 +1,2 @@
+glob:*.py[cow]
+glob:.emacs*
