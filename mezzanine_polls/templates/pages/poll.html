@@ -45,7 +45,7 @@
 <ul>
   {% for choice_text, votes, perc in poll_results %}
   <li>
-    {{ choice_text }}: {{ votes }} {% trans "vot" %}{{ votes|pluralize:"e,es" }}.
+    {{ choice_text }}: {{ votes }} {% trans "vote" %}{{ votes|pluralize:",s" }}.
     <div class="progress">
       <div class="bar" style="width:{{ perc }}%;"></div>
     </div>

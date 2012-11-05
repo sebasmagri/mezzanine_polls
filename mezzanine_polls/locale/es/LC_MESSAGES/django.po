@@ -1,0 +1,39 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-05 19:15-0430\n"
+"PO-Revision-Date: 2012-11-05 19:15-0430\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: models.py:15 templates/pages/poll.html:10 templates/pages/poll.html.py:15
+msgid "Poll"
+msgstr "Encuesta"
+
+#: templates/pages/poll.html:9
+msgid "Home"
+msgstr "Inicio"
+
+#: templates/pages/poll.html:21
+msgid "Created on"
+msgstr "Creado el"
+
+#: templates/pages/poll.html:22
+msgid "Expires on"
+msgstr "Expira el"
+
+#: templates/pages/poll.html:48
+msgid "vote"
+msgstr "voto"
