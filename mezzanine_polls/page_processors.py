@@ -16,18 +16,22 @@ def voting_form(request, page):
         for v in
         Vote.objects.filter(choice__poll = page.poll)
     ]
+    total_votes = len(poll_users)
+
     poll_choices = [
         (c.id, c.text)
         for c in
         page.poll.choice_set.all()
     ]
 
-    print(poll_users)
-
     if request.user in poll_users:
         # render results
         poll_results = [
-            (c.text, c.vote_set.count())
+            (
+                c.text,
+                c.vote_set.count(),
+                (c.vote_set.count() * 100) / total_votes
+            )
             for c in
             page.poll.choice_set.all()
         ]

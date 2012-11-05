@@ -43,9 +43,13 @@
 </form>
 {% else %}
 <ul>
-  {% for choice_text, votes in poll_results %}
-  <li>{{ choice_text }}: {{ votes }} {% trans "vot" %}{{ votes|pluralize:"e,es" }}
-</li>
+  {% for choice_text, votes, perc in poll_results %}
+  <li>
+    {{ choice_text }}: {{ votes }} {% trans "vot" %}{{ votes|pluralize:"e,es" }}.
+    <div class="progress">
+      <div class="bar" style="width:{{ perc }}%;"></div>
+    </div>
+  </li>
   {% endfor %}
 </ul>
 {% endif %}
