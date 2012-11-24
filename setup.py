@@ -1,12 +1,13 @@
 from setuptools import setup, find_packages
-import sys, os
+import os
+import sys
 
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
 import mezzanine_polls
 
 setup(
-    name='Mezzanine Polls',
+    name='mezzanine-polls',
     version=mezzanine_polls.__version__,
     url='https://bitbucket.org/sebasmagri/mezzanine_polls',
     author='Sebastian Magri',
@@ -30,7 +31,8 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Topic :: Internet :: WWW/HTTP :: WSGI',
         'Topic :: Software Development :: Libraries :: Application Frameworks',
-        'Topic :: Software Development :: Libraries :: Python Modules',],
+        'Topic :: Software Development :: Libraries :: Python Modules',
+    ],
     zip_safe=False,
     include_package_data=True,
 )
