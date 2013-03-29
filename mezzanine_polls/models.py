@@ -3,7 +3,6 @@ from django.utils.translation import ugettext as _
 from django.contrib.auth.models import User
 
 from mezzanine.pages.models import Page
-from mezzanine.core.models import RichText
 
 
 class Poll(Page):
@@ -24,6 +23,7 @@ class Choice(models.Model):
             self.text,
             self.poll.title
         )
+
 
 class Vote(models.Model):
     choice = models.ForeignKey('Choice')

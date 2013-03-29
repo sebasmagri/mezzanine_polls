@@ -1,10 +1,11 @@
 from django import forms
 
+
 class VotingForm(forms.Form):
     choices = forms.TypedChoiceField(
         choices=[],
         coerce=int,
-        widget = forms.RadioSelect()
+        widget=forms.RadioSelect()
     )
 
     def __init__(self, *args, **kwargs):

@@ -4,7 +4,6 @@ from .models import Poll, Vote, Choice
 from .forms import VotingForm
 
 
-
 @processor_for(Poll)
 def voting_form(request, page):
     '''
@@ -14,7 +13,7 @@ def voting_form(request, page):
     poll_users = [
         v.user
         for v in
-        Vote.objects.filter(choice__poll = page.poll)
+        Vote.objects.filter(choice__poll=page.poll)
     ]
     total_votes = len(poll_users)
 
@@ -45,7 +44,7 @@ def voting_form(request, page):
                 # Get choice id
                 choice_id = form.cleaned_data['choices']
                 choice = Choice.objects.get(id=choice_id)
-                vote = Vote(choice = choice, user = request.user)
+                vote = Vote(choice=choice, user=request.user)
                 vote.save()
                 return HttpResponseRedirect(page.get_absolute_url())
             else:
